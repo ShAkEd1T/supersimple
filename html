@@ -1,0 +1,167 @@
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+
+<body>
+  <div id="all">
+    <center>
+      <h1> T-shop </h1>
+    </center>
+    <div id="shirts">
+      <div class="all">
+        <div id="shirt1">
+          <img class="pics" src="https://static.thcdn.com/images/large/original//productimg/1600/1600/11622755-1084913005964886.jpg" alt="pic1" onclick="pic()">
+          <p> Marvel T-shirt</p>
+          <div id="div1">
+            <p class="size1">size: M</p>
+            <input type="text" id="id1" class="text1">
+            <p class="price1">10$</p>
+          </div>
+        </div>
+
+        <div id="shirt2">
+          <img class="pics" src="https://www.redwolf.in/image/catalog/mens-t-shirts/harry-potter-infographic-t-shirt-india.png" alt="pic1">
+          <p> harry potter T-shirt</p>
+
+          <div id="div1">
+            <p class="size1">size: S</p>
+            <input type="text" class="text1" id="id2">
+            <p class="price1">15$</p>
+          </div>
+        </div>
+
+        <div id="shirt3">
+          <img class="pics" src="https://ae05.alicdn.com/kf/Hf68a1c889e0b4ef2a7530c4e74b769eag/Fashion-Cool-T-Shirt-Men-women-Anime-Avatar-3D-Printed-T-shirts-Men-women-Harajuku-Style.jpg" alt="pic1">
+          <p> avatar-the last air bander T-shirt</p>
+
+          <div id="div1">
+            <p class="size1">size: L</p>
+            <input type="text" class="text1" id="id3">
+            <p class="price1">13$</p>
+          </div>
+        </div>
+
+        <div id="shirt4">
+          <img class="pics" src="https://img.joomcdn.net/3eb9b6458fa6ce7d9e697bc3120292997de7735f_original.jpeg" alt="pic1">
+          <p> Percy Jackson T-shirt</p>
+
+          <div id="div1">
+            <p class="size1">size:S</p>
+            <input type="text" class="text1" id="id4">
+            <p class="price1">14$</p>
+          </div>
+        </div><button id="letsbuy" onclick="letsbuy()"> let's buy</button>
+      </div>
+    </div>
+  </div>
+  <div id="end"> </div>
+  <div id="two"> </div>
+</body>
+<style>
+.pics {
+  width: 150px;
+}
+
+#div1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.size1 {
+  position: relative;
+  left: -340px;
+  top: -160px;
+}
+
+.price1 {
+  position: relative;
+  left: -230px;
+  top: -160px;
+}
+
+.text1 {
+  position: relative;
+  left: -290px;
+  top: -160px;
+  width: 15px;
+}
+
+#shirt3 {
+  position: relative;
+  left: 550px;
+  top: -500px;
+}
+
+#shirt4 {
+  position: relative;
+  left: 550px;
+  top: -500px;
+}
+
+body {
+  background-color: #cc00cc;
+}
+.all {
+  background-color: white;
+  margin: 50px;
+  padding: 50px;
+}
+h1 {
+  font-family: "Shadows Into Light", cursive;
+}
+
+p {
+  font-family: "Permanent Marker", cursive;
+}
+
+input {
+  font-family: "Covered By Your Grace", cursive;
+}
+#end {
+  display: none;
+  font-family: "Shadows Into Light", cursive;
+}
+#letsbuy {
+  background-color: pink;
+  position: relative;
+  left: 20px;
+  top: -550px;
+  height: 60px;
+  width: 1000px;
+}
+#two {
+  display: none;
+  font-family: "Shadows Into Light", cursive;
+}
+
+input {
+  background-color: pink;
+}
+</style>
+<script>
+var sum1;
+var sum2;
+var sum3;
+var sum4;
+function letsbuy() {
+  sum1 = document.getElementById("id1").value;
+  sum2 = document.getElementById("id2").value;
+  sum3 = document.getElementById("id3").value;
+  sum4 = document.getElementById("id4").value;
+  document.getElementById("end").style.display = "block";
+  document.getElementById("two").style.display = "block";
+  document.getElementById("all").style.display = "none";
+
+  var end = sum1 * 10 + sum2 * 15 + sum3 * 15 + sum4 * 14;
+  var pay = (document.getElementById("end").innerHTML =
+    "Your full payment:" + end);
+  if (end >= 200) {
+    document.getElementById("two").innerHTML = "Your shipping is free";
+  } else {
+    document.getElementById("two").innerHTML = "+10 dollars for the shipping";
+  }
+}
+</script>
